@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card">
+    <h2>Actividades y Talleres</h2>
+    <p>Lista de talleres disponibles para este semestre:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Horario</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let act of actividades()">
+          <td><strong>{{ act.nombre }}</strong></td>
+          <td>{{ act.descripcion }}</td>
+          <td>{{ act.horario }}</td>
+          <td>
+            <button (click)="eliminarActividad(act.id)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Agregar Nueva Actividad</h3>
+    <form (ngSubmit)="agregarActividad()">
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="nuevoNombre" name="nuevoNombre" required>
+      </div>
+
+      <div class="form-group">
+        <label>Descripción:</label>
+        <input type="text" [(ngModel)]="nuevaDescripcion" name="nuevaDescripcion" required>
+      </div>
+
+      <div class="form-group">
+        <label>Horario:</label>
+        <input type="text" [(ngModel)]="nuevoHorario" name="nuevoHorario" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Agregar Actividad</button>
+    </form>
+  </div>
+</div>

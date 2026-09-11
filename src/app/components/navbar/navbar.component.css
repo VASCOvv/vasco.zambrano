@@ -1,0 +1,28 @@
+.simple-nav {
+  background-color: #2c3e50;
+  border-bottom: 1px solid #1a252f;
+}
+
+.simple-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.simple-nav a {
+  display: block;
+  padding: 10px 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.simple-nav a:hover {
+  background-color: #34495e;
+}
+
+.simple-nav a.active {
+  background-color: #0d6efd;
+}
