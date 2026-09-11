@@ -17,8 +17,8 @@ export class InscripcionComponent implements OnInit {
 
   formularioInscripcion!: FormGroup;
   actividades: Actividad[] = [];
-  inscripciones = this.actividadesService.inscripciones;
   mensajeExito = false;
+
 
   ngOnInit(): void {
     this.actividades = this.actividadesService.getActividades();
@@ -43,15 +43,9 @@ export class InscripcionComponent implements OnInit {
       return;
     }
 
-    this.actividadesService.agregarInscripcion(this.formularioInscripcion.value);
     this.formularioInscripcion.reset();
     this.mensajeExito = true;
     setTimeout(() => this.mensajeExito = false, 4000);
   }
-
-  eliminarInscripcion(id: number): void {
-    if (confirm('¿Desea borrar esta inscripción registrada?')) {
-      this.actividadesService.eliminarInscripcion(id);
-    }
-  }
 }
+

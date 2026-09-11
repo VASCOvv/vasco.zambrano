@@ -13,7 +13,6 @@
         <input 
           type="text" 
           formControlName="nombreEstudiante"
-          placeholder="Ej: Juan Pérez"
           [class.invalid]="esCampoInvalido('nombreEstudiante')"
         >
         <div *ngIf="esCampoInvalido('nombreEstudiante')" class="error-text">
@@ -26,7 +25,6 @@
         <input 
           type="text" 
           formControlName="rut"
-          placeholder="Ej: 19876543-K"
           [class.invalid]="esCampoInvalido('rut')"
         >
         <div *ngIf="esCampoInvalido('rut')" class="error-text">
@@ -39,7 +37,6 @@
         <input 
           type="email" 
           formControlName="email"
-          placeholder="ejemplo@estudiante.cl"
           [class.invalid]="esCampoInvalido('email')"
         >
         <div *ngIf="esCampoInvalido('email')" class="error-text">
@@ -52,7 +49,6 @@
         <input 
           type="text" 
           formControlName="carrera"
-          placeholder="Ej: Ingeniería Informática"
           [class.invalid]="esCampoInvalido('carrera')"
         >
         <div *ngIf="esCampoInvalido('carrera')" class="error-text">
@@ -80,38 +76,5 @@
         Enviar Inscripción
       </button>
     </form>
-  </div>
-
-  <div class="card">
-    <h3>Inscripciones Realizadas</h3>
-
-    <div *ngIf="inscripciones().length === 0">
-      <p>No hay inscripciones registradas.</p>
-    </div>
-
-    <table *ngIf="inscripciones().length > 0">
-      <thead>
-        <tr>
-          <th>Estudiante</th>
-          <th>RUT</th>
-          <th>Email</th>
-          <th>Carrera</th>
-          <th>Taller</th>
-          <th>Acción</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let ins of inscripciones()">
-          <td>{{ ins.nombreEstudiante }}</td>
-          <td>{{ ins.rut }}</td>
-          <td>{{ ins.email }}</td>
-          <td>{{ ins.carrera }}</td>
-          <td><strong>{{ ins.actividadNombre }}</strong></td>
-          <td>
-            <button (click)="eliminarInscripcion(ins.id)" class="btn btn-danger">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
